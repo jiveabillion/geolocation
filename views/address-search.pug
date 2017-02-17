@@ -1,21 +1,18 @@
 extends layout
 
 block content
-    h1 Hello. Please enter an address to get info about the location.
-    input(id="pac-input", class="controls", type="text", placeholder="Search Box")
+    h1 Hello my name is #{name}
+    form(id="GeoCodeForm")
+        input(name="address")
+        button(type="submit" name="search-button") Search
     div(id="Result")
-    
-    div(id="map")
-    script(id="SearchResultTemplate", type="text/x-handlebars-template")
+    script(id="SearchResultTemplate" type="text/x-handlebars-template")
         ul
-            li Address: {{formattedAddress}}
-            li Zip: {{zipcode}}
-            li Latitude: {{latitude}}
-            li Longitude: {{longitude}}
-            li County: {{administrativeLevels.level2long}}
-            li Neighborhood: {{extra.neighborhood}}
+        li Address: {{formattedAddress}}
+        li Zip: {{zipcode}}
+        li Latitude: {{latitude}}
+        li Longitude: {{longitude}}
+        li County: {{administrativeLevels.level2long}}
+        li Neighborhood: {{extra.neighborhood}}
 block scripts
-    script(src="/javascripts/geocodeform.js")
-    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBqoKA5F1E5_MR427Z1kyGwMP5zNGjejQ&libraries=places&callback=initAutocomplete"
-)
-    
+  script(src="/javascripts/geocodeform.js")

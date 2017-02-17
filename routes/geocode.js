@@ -10,7 +10,7 @@ var options = {
   apiKey: 'AIzaSyBBqoKA5F1E5_MR427Z1kyGwMP5zNGjejQ', // for Mapquest, OpenCage, Google Premier
   formatter: null         // 'gpx', 'string', ...
 };
-
+var censusApiKey = '45f5418f9ec047b91b5a4037d3a80124edb2f2a5';
 var geocoder = NodeGeocoder(options);
 
 router.post('/lookup',function(req,res,next){
@@ -18,4 +18,6 @@ router.post('/lookup',function(req,res,next){
         return res.json(res2);
     });
 });
+
+
 module.exports = router;

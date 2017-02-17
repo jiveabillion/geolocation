@@ -3,6 +3,10 @@ var app = express();
 var router = express.Router();
 var path = __dirname + '/views/';
 var geocode = require('./routes/geocode');
+
+app.use('/bower_components', express.static(path.join(__dirname, 'bower_components/')))
+app.use(express.static(path.join(__dirname, 'public')));
+
 router.use(function (req,res,next) {
   console.log("/" + req.method);
   next();
